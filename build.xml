@@ -36,16 +36,7 @@
 		<javac srcdir="${src.dir}" destdir="${classes.dir}" fork="true" debug="true" includeAntRuntime="false" />
 	</target>
 
-	<!-- ========= Define Sonar target ========= -->
-	<target name="sonar" depends="compile">
-		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
-			<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
-			<classpath path="path/to/sonar/ant/task/lib/sonar-ant-task-*.jar" />
-		</taskdef>
-		
-		<!-- Execute Sonar -->
-		<sonar:sonar />
-	</target>
+
 
 	<!-- ========= The main target "all" ========= -->
 	<target name="all" depends="clean,compile,sonar" />
